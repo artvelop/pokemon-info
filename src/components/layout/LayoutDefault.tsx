@@ -26,4 +26,5 @@ const MobileContainer = styled.div`
   height: 100vh;
   max-height: 100vh;
   overflow: auto;
+  padding: 16px;
 `;
