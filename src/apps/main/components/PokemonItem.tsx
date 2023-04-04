@@ -1,10 +1,18 @@
-import styled from '@emotion/styled';
 import React from 'react';
+import Image from 'next/image';
+import { Pokemon } from '@/types/pokemon.type';
+import styled from '@emotion/styled';
 
-export const PokemonItem = () => {
+interface Props {
+  pokemon: Pokemon;
+}
+
+export const PokemonItem = ({ pokemon }: Props) => {
   return (
     <Container>
-      <div>PokemonItem</div>
+      <Image src={pokemon.image} alt="" width={120} height={120} />
+      <h3>{pokemon.name}</h3>
+      <p>{pokemon.type}</p>
     </Container>
   );
 };
@@ -15,6 +23,6 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   padding: 8px;
-  border: 1px solid #fff;
   border-radius: 4px;
+  gap: 16px;
 `;

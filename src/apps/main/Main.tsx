@@ -1,11 +1,11 @@
 import { LayoutDefault } from '@/components/layout/LayoutDefault';
 import React from 'react';
-import { Search } from './components/Search';
+import { PokemonList } from './components/PokemonList';
 
 export const Main = () => {
   return (
     <LayoutDefault>
-      <Search />
+      <PokemonList />
     </LayoutDefault>
   );
 };
