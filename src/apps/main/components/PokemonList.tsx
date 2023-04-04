@@ -1,25 +1,16 @@
-import { pokemonApi } from '@/apis/controller/pokemonApi';
-import { Pokemon } from '@/types/pokemon.type';
+import React from 'react';
 import styled from '@emotion/styled';
-import React, { useEffect, useState } from 'react';
+import { useRecoilValue } from 'recoil';
+import { pokemonList } from '@/recoil/pokemonList.recoil';
+import { Pokemon } from '@/types/pokemon.type';
 import { PokemonItem } from './PokemonItem';
 
 export const PokemonList = () => {
-  const [pokemonList, setPokemonList] = useState<Pokemon[]>([]);
-
-  useEffect(() => {
-    init();
-  }, []);
-
-  const init = async () => {
-    const list = await pokemonApi.getList();
-
-    setPokemonList(list);
-  };
+  const list = useRecoilValue(pokemonList);
 
   return (
     <Container>
-      {pokemonList.map((item) => (
+      {list.map((item: Pokemon) => (
         <PokemonItem key={item.id} pokemon={item} />
       ))}
     </Container>
