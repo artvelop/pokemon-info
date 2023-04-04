@@ -13,7 +13,7 @@ export const pokemonApi = {
         name,
         image: sprites['front_default'],
         type: types.map(({ type }: any) => type.name).join(', '),
-        id: id,
+        id: id.toString(),
       })),
     );
   },
