@@ -3,14 +3,17 @@ import styled from '@emotion/styled';
 import { LayoutDefault } from '@/components/layout/LayoutDefault';
 import { PokemonList } from './components/PokemonList';
 import { Search } from './components/Search';
+import { PokemonListErrorBoundary } from './components/PokemonListErrorBoundary';
 
 export const Main = () => {
   return (
     <LayoutDefault>
       <Search />
-      <Suspense fallback={<LoadingWrapper>loading...</LoadingWrapper>}>
-        <PokemonList />
-      </Suspense>
+      <PokemonListErrorBoundary>
+        <Suspense fallback={<LoadingWrapper>loading...</LoadingWrapper>}>
+          <PokemonList />
+        </Suspense>
+      </PokemonListErrorBoundary>
     </LayoutDefault>
   );
 };

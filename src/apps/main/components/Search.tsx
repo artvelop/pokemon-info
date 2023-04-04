@@ -6,7 +6,9 @@ import { useRecoilRefresher_UNSTABLE } from 'recoil';
 export const Search = () => {
   const refreshPokemonList = useRecoilRefresher_UNSTABLE(pokemonList);
 
-  const handleRefreshPokemonList = () => refreshPokemonList();
+  const handleRefreshPokemonList = () => {
+    refreshPokemonList();
+  };
 
   return (
     <Container>
