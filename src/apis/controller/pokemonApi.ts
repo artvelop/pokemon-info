@@ -1,5 +1,4 @@
 import { Pokemon } from '@/types/pokemon.type';
-import api from '../api';
 
 export const pokemonApi = {
   getList: async (): Promise<Pokemon[]> => {
